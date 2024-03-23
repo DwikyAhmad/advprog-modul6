@@ -13,3 +13,6 @@ Pada commit 3 ini, function handle_connection dibuat untuk memberikan conditiona
 
 ## Commit 4 Reflection Notes
 Pada commit ke 4 ini, dapat dilihat bahwa kode mensimulasikan sebuah page yang memerlukan response yang lama pada server yang dijalankan pada sebuah single thread, hal ini memberikan performa yang buruk ketika terdapat user yang bersamaan ingin mengakses sebuah page pada website yang threadnya sedang mengalami slow response, membuat case user yang seharusnya mendapatkan respons cepat pada halaman `/` harus menunggu user lainnya terlebih dahulu yang sedang mengakses halaman `/sleep`. Jika terdapat banyak user yang mengakses server tentunya user akan kesulitan mengakses halaman website karena panjangnya antrian pada request halaman yang membutuhkan waktu load yang lama.
+
+## Commit 5 Reflection Notes
+ThreadPool bekerja dengan menyiapkan sebuah queue dari thread yang menunggu perintah untuk mejalankan sebuah kode, hal ini berguna untuk menghindari serangan DDoS dan tetap melakukan implementasi multi-threading, pada kode ini dibuat sebuah ThreadPool yang menyimpan koleksi dari Worker yang bekerja seperti thread yang dapat menunggu perintah untuk melaksanakan sebuah kode.
